@@ -1,0 +1,11 @@
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+node_modules/
+npm-debug.log*
+
+# Local high-resolution source photos (optimized copies are used by the site)
+images/15-1DSC02501-1.jpg
+images/DSC02637.JPG
+images/KakaoTalk_20260820_133317840_02.jpg

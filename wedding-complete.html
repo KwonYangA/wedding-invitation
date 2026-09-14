@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#5C1212">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>정계철 · 권양아 결혼식</title>
+
+<style>
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('./fonts/Paperlogy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('./fonts/Paperlogy-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ownglyph WeeCList';
+    src: url('./fonts/Ownglyph-WeeCList.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root{
+    --red:#7B1C1C;
+    --red-dark:#5C1212;
+    --red-light:#A32828;
+
+    --cream:#F0EBE1;
+    --cream-dark:#E4DDD0;
+    --cream-mid:#D8CEBC;
+
+    --text-dark:#2A1A1A;
+    --text-mid:#5A3A3A;
+    --text-light:#8A6A6A;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body{
+    min-width: 280px;
+    width:100%;
+    overflow-x:hidden;
+    touch-action: pan-y;
+    background:#5C1212;
+}
+
+body{
+    color:var(--text-dark);
+    font-family:'Paperlogy', sans-serif;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+    max-width: 100%;
+}
+
+img {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ── HERO 섹션 (메인) ── */
+
+.hero{
+    min-height:100vh;
+    min-height:100svh;
+    background: linear-gradient(
+        180deg,
+        var(--red-dark) 0%,
+        var(--red) 100%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: var(--cream);
+
+    padding:
+        max(clamp(24px, 5vw, 40px), env(safe-area-inset-top))
+        max(clamp(12px, 3.5vw, 18px), env(safe-area-inset-right))
+        max(clamp(24px, 5vw, 40px), env(safe-area-inset-bottom))
+        max(clamp(12px, 3.5vw, 18px), env(safe-area-inset-left));
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -15%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0,0,0,.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-inner{
+    width:100%;
+    max-width:430px;
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* 시간 */
+.time{
+    font-size: clamp(68px, 21vw, 102px);
+    font-weight: 200;
+    letter-spacing: -4px;
+    line-height: .92;
+    margin-bottom: clamp(28px, 6vw, 40px);
+    text-shadow: 0 2px 20px rgba(0,0,0,.14);
+}
+
+/* 날짜 */
+.date{
+    margin-bottom: clamp(10px, 2vw, 14px);
+    font-size: clamp(13px, 3.5vw, 16px);
+    opacity: .9;
+    letter-spacing: 1.8px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* 앨범 이미지 */
+.album {
+    width: min(100%, 380px);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    border-radius: clamp(12px, 3.5vw, 18px);
+    overflow: hidden;
+    box-shadow: 0 22px 52px rgba(0, 0, 0, 0.34);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.album img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 43%;
+    display: block;
+}
+
+/* 플레이어 */
+.player{
+    width:100%;
+    max-width: 380px;
+    margin: clamp(22px, 5vw, 30px) auto 0;
+    padding: clamp(14px, 4vw, 20px);
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: clamp(20px, 5vw, 28px);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: none;
+}
+
+.player-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: clamp(16px, 4vw, 20px);
+}
+
+.player-meta {
+    width: 100%;
+    min-width: 0;
+    padding: 0 34px;
+}
+
+.song{
+    font-size: clamp(14px, 4vw, 16px);
+    font-weight:600;
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.couple{
+    font-size: clamp(12px, 3.3vw, 14px);
+    opacity:.58;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.sound-wave {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    opacity: .78;
+}
+
+.sound-wave span {
+    display: block;
+    width: 3px;
+    height: var(--wave-height);
+    min-height: 5px;
+    border-radius: 99px;
+    background: var(--cream);
+    animation: sound-wave 1s ease-in-out infinite alternate;
+    animation-delay: var(--wave-delay);
+    animation-play-state: paused;
+}
+
+.hero.is-playing .sound-wave span {
+    animation-play-state: running;
+}
+
+@keyframes sound-wave {
+    from { transform: scaleY(.45); opacity: .55; }
+    to { transform: scaleY(1); opacity: 1; }
+}
+
+.progress-row{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.progress-start,
+.progress-end{
+    font-size: clamp(10px, 2.7vw, 12px);
+    color:rgba(240,235,225,.85);
+    white-space:nowrap;
+}
+
+.progress-end {
+    width: 18px;
+    color: var(--cream);
+    text-align: center;
+}
+
+.progress-bar{
+    flex:1;
+    height:4px;
+    background:rgba(240,235,225,.2);
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.progress-bar {
+    cursor: pointer;
+    touch-action: none;
+}
+
+.ios-progress-toast {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(25, 16, 16, .28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+}
+.ios-progress-toast.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.ios-progress-dialog {
+    width: min(100%, 292px);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.48);
+    border-radius: 22px;
+    background: rgba(247, 242, 238, .7);
+    box-shadow: 0 22px 60px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.55);
+    color: #241d1d;
+    text-align: center;
+    transform: scale(.9);
+    backdrop-filter: blur(24px) saturate(175%);
+    -webkit-backdrop-filter: blur(24px) saturate(175%);
+    transition: transform .22s cubic-bezier(.2,.8,.2,1);
+}
+.ios-progress-toast.is-visible .ios-progress-dialog { transform: scale(1); }
+.ios-progress-message { padding: 24px 20px 20px; }
+.ios-progress-icon {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--red);
+    font-size: 19px;
+}
+.ios-progress-toast-title {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+}
+.ios-progress-toast-subtitle {
+    display: block;
+    margin-top: 8px;
+    color: rgba(36,29,29,.65);
+    font-size: 12px;
+    line-height: 1.55;
+}
+.ios-progress-ok {
+    width: 100%;
+    min-height: 50px;
+    border: 0;
+    border-top: 1px solid rgba(60,50,50,.18);
+    background: transparent;
+    color: #007aff;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.ios-progress-ok:active { background: rgba(255,255,255,.42); }
+
+.progress-fill{
+    display: block;
+    height:100%;
+    width:55%;
+    min-width: 2px;
+    background:var(--cream);
+    border-radius:999px;
+    transition: width .8s ease;
+}
+
+/* 컨트롤 버튼 */
+
+.controls{
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    gap: clamp(8px, 3vw, 18px);
+    margin-top: clamp(14px, 3.5vw, 20px);
+}
+
+.controls button{
+    background:none;
+    border:none;
+    font-size:30px;
+    color:var(--cream);
+    cursor:pointer;
+    min-width: 44px;
+    min-height: 44px;
+}    
+
+.play-btn{
+    font-size:42px !important;
+}
+
+.lockscreen-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: clamp(22px, 5vw, 30px);
+}
+
+.swipe-open {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: clamp(11px, 3vw, 13px);
+    font-weight: 500;
+    letter-spacing: .5px;
+    opacity: .82;
+}
+
+.swipe-open i {
+    font-size: 13px;
+    animation: swipe-hint 1.5s ease-in-out infinite;
+}
+
+.home-indicator {
+    width: min(34vw, 130px);
+    height: 4px;
+    margin-top: 5px;
+    border-radius: 999px;
+    background: rgba(240,235,225,.88);
+}
+
+@keyframes swipe-hint {
+    0%, 100% { transform: translateY(2px); opacity: .55; }
+    50% { transform: translateY(-2px); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
+/* ── 공통 섹션 ── */
+
+section{
+    padding: clamp(50px, 12vw, 80px) clamp(16px, 5%, 32px);
+    scroll-margin-top: 16px;
+}
+
+.section-white {
+    background: white;
+}
+
+.section-cream {
+    background: var(--cream);
+}
+
+.section-title{
+    color:var(--red);
+    text-align:center;
+    margin-bottom: clamp(28px, 7vw, 42px);
+    letter-spacing:2px;
+    font-size: clamp(24px, 6vw, 32px);
+    font-weight: 800;
+    font-family: 'Paperlogy', sans-serif;
+    text-transform: uppercase;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    margin: 13px auto 0;
+    background: var(--red);
+    opacity: .52;
+}
+
+.message{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    line-height:2;
+    color:var(--text-mid);
+    font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.divider {
+  width: clamp(30px, 10vw, 40px);
+  height: 1px;
+  background: var(--cream-mid);
+  margin: 0 auto clamp(24px, 6vw, 32px);
+}
+
+.divider-red {
+  background: var(--red);
+  opacity: 0.3;
+}
+
+.message + .divider {
+  margin-top: clamp(24px, 6vw, 34px);
+}
+
+/* 이름 그리드 */
+.family-relations-container {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: center;
+  align-items: center;
+  column-gap: clamp(8px, 2.5vw, 14px);
+  row-gap: clamp(12px, 3vw, 16px);
+  margin: clamp(24px, 6vw, 30px) auto;
+  width: 100%;
+  max-width: 360px;
+  font-size: clamp(12px, 3vw, 14px);
+  color: #444444;
+}
+
+.relation-row {
+  display: contents;
+}
+
+.parents-names {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.relation-type {
+  font-size: clamp(11px, 2.5vw, 12px);
+  color: #888888;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.couple-name {
+  font-weight: 500;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* ── 사진 섹션 ── */
+
+.story-card{
+    background:white;
+    padding: clamp(12px, 3vw, 16px);
+    border-radius: clamp(16px, 4vw, 24px);
+    box-shadow:0 10px 30px rgba(123,28,28,.08);
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.story-card img{
+    width:100%;
+    border-radius: clamp(12px, 3vw, 20px);
+    display: block;
+}
+
+/* ── 달력 ── */
+.calendar-section {
+    text-align: center;
+}
+
+.calendar-wrap {
+    width: 90%;
+    max-width: 320px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(90, 30, 30, 0.08);
+    margin: 0 auto clamp(20px, 5vw, 28px);
+}
+
+.calendar__header {
+    background: var(--red);
+    color: white;
+    padding: 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.calendar__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--cream-dark);
+    padding: 10px 8px 6px;
+}
+
+.calendar__weekday {
+    text-align: center;
+    font-size: clamp(10px, 2.5vw, 11px);
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.calendar__weekday:first-child { 
+    color: #C9382A; 
+}
+
+.calendar__weekday:last-child {
+    color: #3A6AB5; 
+}
+
+.calendar__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 8px 8px 16px;
+    gap: 2px;
+}
+
+.calendar__day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(12px, 3vw, 13px);
+    color: var(--text-mid);
+    border-radius: 50%;
+    font-weight: 300;
+    position: relative;
+}
+
+.calendar__day.is-empty { 
+    color: transparent; 
+}
+
+.calendar__day.is-sunday { 
+    color: #C9382A; 
+}
+
+.calendar__day.is-saturday { 
+    color: #3A6AB5; 
+}
+
+.calendar__day.is-wedding {
+    background-color: transparent !important; /* 기존 동그라미 배경색 지우기 */
+    border-radius: 0 !important;             /* 기존 동그라미 테두리 둥글기 지우기 */
+    
+    /* 하트 모양 배경 이미지 넣기 */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238B2222'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%; /* 날짜 숫자보다 살짝 크게 하트 크기 조절 */
+    
+    /* 하트 배경 위의 글자 색상 (흰색으로 하고 싶다면 설정) */
+    color: #fff !important; 
+    font-weight: bold;
+}
+
+.calendar__day.is-wedding::after {
+  content: '♥';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7px;
+  color: rgba(255,255,255,0.7);
+}
+
+.calendar-date{
+    margin-bottom: 30px;
+    color: var(--text-mid);
+    font-size: clamp(16px, 4.2vw, 20px);
+    line-height: 1.9;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* D-Day */
+.dday{
+    font-size: clamp(13px, 3.5vw, 16px);
+    font-weight:600;
+    letter-spacing: .2px;
+    color:var(--red);
+    line-height: 1.6;
+}
+
+/* 카운트다운 그리드 */
+.countdown-grid {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    gap: clamp(6px, 2vw, 11px);
+    margin:24px 0;
+}
+
+.countdown-separator {
+    align-self: center;
+    margin-top: 18px;
+    color: var(--red);
+    font-size: clamp(18px, 5vw, 24px);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(6px, 1.5vw, 8px);
+}
+
+.countdown-num {
+    color:var(--red);
+    font-size: clamp(18px, 5vw, 24px);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.countdown-label {
+    color:var(--red);
+    font-size: clamp(10px, 2.5vw, 11px);
+    opacity: 0.7;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* ── 양가 하객 안내 탭 ── */
+.guest-info-section { text-align: center; }
+.guest-info-intro {
+    margin: calc(clamp(28px, 7vw, 42px) * -0.45) auto clamp(22px, 5vw, 30px);
+    color: var(--text-light);
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1.7;
+}
+.guest-info-wrap { width: 100%; max-width: 600px; margin: 0 auto; }
+.guest-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4px;
+    border: 1px solid var(--cream-mid);
+    border-radius: 14px;
+    background: var(--cream);
+}
+.guest-tab {
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--red);
+    font-family: inherit;
+    font-size: clamp(13px, 3.5vw, 15px);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.guest-tab.is-active {
+    background: var(--red);
+    color: var(--cream);
+    box-shadow: 0 5px 14px rgba(123,28,28,.18);
+}
+.guest-slider {
+    margin-top: 14px;
+    overflow: hidden;
+    border: 1px solid var(--cream-mid);
+    border-radius: clamp(14px, 3.5vw, 18px);
+    background: white;
+    touch-action: pan-y;
+    transition: height .3s ease;
+}
+.guest-track {
+    display: flex;
+    align-items: flex-start;
+    transition: transform .35s ease;
+    will-change: transform;
+}
+.guest-track[data-side="bride"] { transform: translateX(-100%); }
+.guest-panel {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: clamp(22px, 5vw, 30px);
+    text-align: left;
+}
+.guest-panel[aria-hidden="true"] { visibility: hidden; }
+.guest-panel-title {
+    margin-bottom: clamp(18px, 4.5vw, 24px);
+    color: var(--red-dark);
+    text-align: center;
+    font-size: clamp(17px, 4.5vw, 20px);
+    font-weight: 700;
+}
+.guest-block {
+    padding: clamp(15px, 4vw, 20px) 0;
+    border-top: 1px solid var(--cream-dark);
+}
+.guest-block:first-of-type { padding-top: 0; border-top: 0; }
+.guest-block:last-child { padding-bottom: 0; }
+.guest-block-label {
+    margin-bottom: 7px;
+    color: var(--red-dark);
+    font-size: clamp(13px, 3.5vw, 15px);
+    font-weight: 700;
+}
+.guest-block-text {
+    color: var(--text-mid);
+    font-size: clamp(12px, 3.3vw, 14px);
+    line-height: 1.8;
+}
+.guest-block-text strong { color: var(--text-dark); font-weight: 700; }
+.guest-map {
+    width: 100%;
+    height: clamp(160px, 44vw, 210px);
+    margin-top: 14px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--cream-dark);
+}
+.guest-map iframe { width: 100%; height: 100%; border: 0; }
+.guest-swipe-hint {
+    margin-top: 12px;
+    color: var(--text-light);
+    font-size: 11px;
+    letter-spacing: .2px;
+}
+
+/* ── 갤러리 ── */
+
+/* ── 안내사항 폴라로이드 캐러셀 ── */
+.notice-section { overflow: hidden; }
+.notice-intro {
+    margin: calc(clamp(28px, 7vw, 42px) * -.45) auto 24px;
+    color: var(--text-light);
+    text-align: center;
+    font-size: clamp(12px, 3.2vw, 14px);
+}
+.notice-carousel {
+    display: flex;
+    gap: clamp(14px, 4vw, 20px);
+    width: calc(100% + var(--page-pad));
+    margin-right: calc(var(--page-pad) * -1);
+    padding: 6px var(--page-pad) 24px 2px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 2px;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+}
+.notice-carousel::-webkit-scrollbar { display: none; }
+.notice-card {
+    flex: 0 0 min(82vw, 360px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1.5px solid var(--cream-mid);
+    border-radius: 4px 4px 18px 18px;
+    background: var(--cream);
+    box-shadow: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+.notice-polaroid {
+    padding: clamp(18px, 5vw, 24px) clamp(18px, 5vw, 24px) 0;
+    background: var(--red);
+}
+.notice-polaroid.is-white { background: #fffdf8; }
+.notice-polaroid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / .95;
+    object-fit: cover;
+    filter: saturate(.88) contrast(.96);
+}
+.notice-card:nth-child(2) .notice-polaroid img { object-position: 70% center; }
+.notice-card:nth-child(3) .notice-polaroid img { object-position: center; }
+.notice-card:nth-child(1) .notice-polaroid img,
+.notice-card:nth-child(4) .notice-polaroid img {
+    object-fit: contain;
+    object-position: center;
+    background: inherit;
+}
+.notice-handwriting {
+    min-height: clamp(88px, 23vw, 108px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 6px 12px;
+    color: var(--cream);
+    font-family: 'Ownglyph WeeCList', cursive;
+    font-size: clamp(27px, 7.3vw, 34px);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.notice-polaroid.is-white .notice-handwriting { color: #2f2926; }
+.notice-content {
+    flex: 1;
+    min-height: 250px;
+    padding: clamp(24px, 6vw, 32px);
+    color: var(--text-mid);
+    text-align: left;
+}
+.notice-kicker {
+    margin-bottom: 13px;
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.notice-content p {
+    font-size: clamp(13px, 3.55vw, 15px);
+    line-height: 1.9;
+    word-break: keep-all;
+}
+.notice-content strong { color: var(--text-dark); font-weight: 700; }
+.notice-map-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin-top: 20px;
+}
+.notice-map-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    border: 1px solid var(--red);
+    border-radius: 9px;
+    color: var(--red-dark);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.notice-map-button:active { background: var(--cream-dark); }
+.notice-parking-note {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--cream-dark);
+}
+.notice-account-content { padding-inline: clamp(16px, 4vw, 22px); }
+.notice-account-content .account-intro {
+    margin: 0 0 20px;
+    text-align: left;
+}
+.notice-account-content .account-intro-text {
+    font-size: clamp(12px, 3.25vw, 14px);
+    line-height: 1.75;
+}
+.notice-account-content .account-section { max-width: none; }
+.notice-account-content .account-group { margin-bottom: 10px; }
+.notice-account-content .account-toggle { min-height: 50px; }
+.notice-account-content .account-bank { overflow-wrap: anywhere; }
+.notice-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 2px;
+}
+.notice-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--cream-dark);
+    transition: width .2s ease, background .2s ease;
+}
+.notice-dot.is-active { width: 22px; border-radius: 8px; background: var(--red); }
+.notice-swipe-text {
+    margin-top: 10px;
+    color: var(--text-light);
+    text-align: center;
+    font-size: 11px;
+}
+
+.gallery{
+    display: flex;
+    gap: clamp(12px, 3.5vw, 18px);
+    width: calc(100% + var(--page-pad));
+    max-width: none;
+    margin-right: calc(var(--page-pad) * -1);
+    padding: 4px var(--page-pad) 18px 0;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 0;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+}
+.gallery::-webkit-scrollbar { display: none; }
+
+.gallery-item{
+    flex: 0 0 min(78vw, 350px);
+    aspect-ratio: 4 / 5;
+    border-radius: clamp(10px, 2.5vw, 16px);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .28s ease, filter .28s ease, opacity .28s ease;
+    background: var(--cream-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+}
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 10px;
+}
+.gallery-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cream-dark);
+    transition: width .2s ease, background .2s ease;
+}
+.gallery-dot.is-active { width: 14px; border-radius: 8px; background: var(--red); }
+
+.gallery-item:active,
+.gallery-item:hover {
+    transform: scale(0.96);
+    filter: brightness(0.92);
+}
+
+@media (hover: none), (pointer: coarse) {
+    .gallery.is-ready .gallery-item {
+        transform: scale(.96);
+        opacity: .74;
+        filter: none;
+    }
+    .gallery.is-ready .gallery-item.is-active {
+        transform: scale(1);
+        opacity: 1;
+        filter: none;
+    }
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    opacity: 0.5;
+    font-size: clamp(24px, 6vw, 32px);
+    background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream-mid) 100%);
+}
+
+/* ── 라이트박스 ── */
+
+.lightbox{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding:
+        max(12px, env(safe-area-inset-top))
+        max(8px, env(safe-area-inset-right))
+        max(12px, env(safe-area-inset-bottom))
+        max(8px, env(safe-area-inset-left));
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active{
+    display: flex;
+}
+
+.lightbox-content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.lightbox-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    min-height: 44px;
+    min-width: 44px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.lightbox-close:active {
+    opacity: 1;
+}
+
+.lightbox-nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    min-height: 44px;
+    min-width: 44px;
+    transition: background 0.2s;
+}
+
+.lightbox-nav:active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-prev{
+    left: 20px;
+}
+
+.lightbox-next{
+    right: 20px;
+}
+
+/* ── 지도 ── */
+
+.map{
+    height: clamp(200px, 50vw, 300px);
+    background:var(--cream-dark);
+    border-radius: clamp(16px, 4vw, 24px);
+    max-width: 600px;
+    margin: 0 auto 24px;
+    overflow: hidden;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ── 장소 정보 ── */
+
+.venue-info {
+    max-width: 600px;
+    margin: 0 auto clamp(20px, 5vw, 28px);
+    padding: clamp(16px, 4vw, 24px);
+    background: white;
+    border-radius: clamp(12px, 3vw, 16px);
+    border: 1px solid var(--cream-mid);
+}
+
+.venue-name{
+    font-size: clamp(16px, 4vw, 18px);
+    font-weight: 700;
+    color: var(--red-dark);
+    margin-bottom: clamp(8px, 2vw, 12px);
+}
+
+.venue-hall {
+    font-size: clamp(13px, 3.5vw, 15px);
+    font-weight: 500;
+    color: var(--text-mid);
+    margin-bottom: clamp(12px, 3vw, 16px);
+}
+
+.venue-address{
+    font-size: clamp(13px, 3.5vw, 14px);
+    color:var(--text-mid);
+    line-height:1.6;
+    margin-bottom: clamp(12px, 3vw, 16px);
+}
+
+.venue-address-small {
+    opacity: 0.7;
+    font-size: clamp(12px, 3vw, 13px);
+}
+
+.venue-buttons {
+    display: flex;
+    gap: clamp(4px, 1.2vw, 8px);
+    flex-wrap: nowrap;
+    margin-top: clamp(12px, 3vw, 16px);
+}
+
+.map-btn{
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 4px;
+    border:1px solid var(--cream-mid);
+    border-radius:24px;
+    background:white;
+    font-size: clamp(10px, 2.8vw, 12px);
+    letter-spacing:0;
+    text-decoration:none;
+    color:var(--text-mid);
+    cursor:pointer;
+    transition:all 0.2s;
+    min-height: 44px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.map-btn:active {
+    border-color: var(--red);
+    color: var(--red);
+    background: rgba(123, 28, 28, 0.05);
+}
+
+/* 교통 안내 */
+.transport-guide {
+    margin-top: clamp(22px, 5vw, 30px);
+    border-top: 1px solid var(--cream-mid);
+}
+
+.transport-item {
+    padding: clamp(18px, 4vw, 22px) 0;
+    border-bottom: 1px solid var(--cream-mid);
+}
+
+.transport-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.transport-title {
+    margin-bottom: 12px;
+    color: var(--red-dark);
+    font-size: clamp(15px, 4vw, 17px);
+    font-weight: 700;
+}
+
+.transport-detail {
+    color: var(--text-mid);
+    font-size: clamp(12px, 3.3vw, 14px);
+    line-height: 1.75;
+}
+
+.transport-detail + .transport-detail {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cream-dark);
+}
+
+.transport-item:first-child .transport-detail + .transport-detail {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.transport-detail strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.transport-note {
+    margin-top: 10px;
+    color: var(--text-light);
+    font-size: clamp(11px, 3vw, 13px);
+}
+
+.account-intro {
+    max-width: 600px;
+    margin: 0 auto clamp(28px, 7vw, 40px);
+    text-align: center;
+}
+
+.account-intro-text {
+    color: var(--text-mid);
+    font-size: clamp(13px, 3.5vw, 15px);
+    line-height: 1.9;
+}
+
+.account-flower-note {
+    margin-top: clamp(20px, 5vw, 28px);
+    padding-top: clamp(18px, 4vw, 22px);
+    border-top: 1px solid var(--cream-mid);
+    color: var(--text-light);
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 1.7;
+}
+
+/* ── 계좌번호 섹션 ── */
+
+.account-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.account-group{
+    border:1px solid var(--cream-mid);
+    border-radius: clamp(12px, 3vw, 16px);
+    overflow:hidden;
+    margin-bottom: clamp(12px, 3vw, 16px);
+    background:white;
+}
+
+.account-toggle{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: clamp(14px, 3.5vw, 18px) clamp(16px, 4vw, 20px);
+    background:none;
+    border:none;
+    font-family:inherit;
+    font-size: clamp(13px, 3.5vw, 15px);
+    font-weight:700;
+    color:var(--text-dark);
+    cursor:pointer;
+    text-align:left;
+    min-height: 44px;
+}
+
+.account-toggle:active {
+    background: rgba(123, 28, 28, 0.05);
+}
+
+.account-toggle-icon{
+    width: clamp(16px, 4vw, 20px);
+    height: clamp(16px, 4vw, 20px);
+    flex-shrink:0;
+    transition:transform 0.3s ease;
+    color: var(--text-light);
+}
+
+.account-group.is-open .account-toggle-icon {
+    transform:rotate(180deg);
+}
+
+.account-list{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    border-top:0px solid var(--cream-mid);
+}
+
+.account-group.is-open .account-list {
+    max-height: 600px;
+    border-top-width: 1px;
+}
+
+.account-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: clamp(12px, 3vw, 16px) clamp(16px, 4vw, 20px);
+    border-bottom:1px solid var(--cream-mid);
+    gap: clamp(12px, 3vw, 16px);
+    flex-wrap: wrap;
+}
+
+.account-item:last-child {
+    border-bottom: none;
+}
+
+.account-info {
+    flex: 1;
+    min-width: 140px;
+}
+
+.account-role{
+    font-size: clamp(10px, 2.5vw, 11px);
+    letter-spacing:0.5px;
+    color:var(--text-light);
+    text-transform:uppercase;
+    margin-bottom:4px;
+    font-weight: 600;
+}
+
+.account-name{
+    font-size: clamp(14px, 3.5vw, 15px);
+    font-weight:700;
+    color:var(--text-dark);
+    margin-bottom: 3px;
+}
+
+.account-bank{
+    font-size: clamp(12px, 3vw, 13px);
+    color:var(--text-light);
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.account-copy-btn{
+    flex-shrink:0;
+    padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 16px);
+    border:1px solid var(--cream-mid);
+    border-radius:24px;
+    background:white;
+    font-family:inherit;
+    font-size: clamp(11px, 2.5vw, 12px);
+    color:var(--text-mid);
+    cursor:pointer;
+    letter-spacing:0.3px;
+    transition:all 0.2s;
+    white-space:nowrap;
+    min-height: 36px;
+    min-width: 44px;
+    font-weight: 600;
+}
+
+.account-copy-btn:active {
+    border-color: var(--red);
+    color: var(--red);
+    background: rgba(123, 28, 28, 0.05);
+}
+
+.account-copy-btn.copied {
+    background:var(--red);
+    border-color:var(--red);
+    color:white;
+}
+
+/* ── 마지막 감사 섹션 ── */
+.account-ending {
+    border-top: 1px solid rgba(123,28,28,.08);
+}
+
+.closing-section {
+    padding-top: clamp(30px, 8vw, 52px);
+    padding-bottom: 10px;
+    background: var(--red-dark);
+    color: var(--cream);
+    text-align: center;
+}
+
+.closing-photo {
+    width: min(100%, 420px);
+    aspect-ratio: 4 / 5;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(240,235,225,.34);
+    border-radius: clamp(12px, 3vw, 18px);
+    box-shadow: 0 18px 40px rgba(0,0,0,.22);
+}
+
+.closing-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.closing-message {
+    color: var(--text-mid);
+    font-size: clamp(14px, 3.7vw, 17px);
+    line-height: 2;
+}
+
+.closing-signature {
+    margin-top: 0;
+    color: var(--cream);
+    font-size: clamp(12px, 3.2vw, 14px);
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    line-height: 1.8;
+}
+
+.wedding-footer {
+    padding:
+        clamp(14px, 4vw, 20px)
+        max(16px, env(safe-area-inset-right))
+        max(clamp(28px, 7vw, 40px), env(safe-area-inset-bottom))
+        max(16px, env(safe-area-inset-left));
+    background: var(--red-dark);
+    color: var(--cream);
+    text-align: center;
+}
+
+.wedding-footer-names {
+    font-size: clamp(13px, 3.5vw, 15px);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.wedding-footer-label {
+    margin-top: 7px;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    opacity: .62;
+}
+
+.wedding-footer-heart {
+    margin-top: 14px;
+    font-size: 12px;
+    opacity: .8;
+}
+
+.wedding-footer-thanks {
+    margin-top: 12px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(12px, 3.2vw, 14px);
+    font-style: italic;
+    letter-spacing: .8px;
+    opacity: .82;
+}
+
+/* ── 애니메이션 ── */
+
+.fade-in{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── 반응형 ── */
+
+@media (min-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .countdown-grid {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    section {
+        padding: clamp(40px, 10vw, 50px) 12px;
+    }
+    
+    .countdown-grid {
+        gap: 8px;
+    }
+
+    .hero {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .time {
+        letter-spacing: -2px;
+    }
+
+}
+
+@media (max-height: 700px) and (orientation: portrait) {
+    .hero {
+        justify-content: flex-start;
+    }
+
+    .date {
+        margin-bottom: 7px;
+    }
+
+    .time {
+        margin-bottom: 22px;
+    }
+
+    .album {
+        width: min(100%, 380px);
+    }
+
+    .player {
+        margin-top: 16px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .player-heading {
+        margin-bottom: 12px;
+    }
+
+    .lockscreen-footer {
+        margin-top: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .sound-wave span,
+    .swipe-open i {
+        animation: none;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═════════════════════════════════════════════════════ -->
+<!-- 1. HERO / 메인 섹션 (레드 배경) -->
+<!-- ═════════════════════════════════════════════════════ -->
+
+<div class="hero">
+    <div class="hero-inner">
+        <div class="date">
+            2026.10.18 (일)
+        </div>
+
+        <div class="time">14:00</div>
+
+        <div class="album fade-in">
+            <img src="images/hero-main.jpg" alt="정계철과 권양아의 웨딩 사진">
+        </div>
+        
+        <div class="player fade-in">
+            <div class="player-heading">
+                <div class="player-meta">
+                    <div class="song">We're Getting Married!</div>
+                    <div class="couple">정계철 · 권양아</div>
+                </div>
+                <div class="sound-wave" aria-label="음악 재생 중">
+                    <span style="--wave-height:11px;--wave-delay:-.2s"></span>
+                    <span style="--wave-height:18px;--wave-delay:-.6s"></span>
+                    <span style="--wave-height:24px;--wave-delay:-.4s"></span>
+                    <span style="--wave-height:15px;--wave-delay:-.8s"></span>
+                    <span style="--wave-height:21px;--wave-delay:-.1s"></span>
+                </div>
+            </div>
+
+            <div class="progress-row">
+                <span class="progress-start">
+                    Today
+                </span>       
+                <div class="progress-bar" id="weddingProgress" role="button" tabindex="0" aria-label="결혼식 진행률 안내">
+                    <div class="progress-fill" id="fill"></div>
+                </div>      
+                <span class="progress-end">
+                    <i class="fa-solid fa-heart" aria-label="결혼식"></i>
+                </span>
+        
+            </div>
+
+            
+            
+            <div class="controls">
+                <button type="button" id="backwardBtn" aria-label="이전 곡">
+                    <i class="fa-solid fa-backward"></i>
+                </button>
+            
+                <button type="button" class="play-btn" id="playBtn" aria-label="음악 재생">
+                    <i class="fa-solid fa-play" id="playIcon"></i>
+                </button>
+                <audio id="weddingBgm" src="./audio/bgm.mp3" autoplay loop preload="auto"></audio>
+                <button type="button" aria-label="다음 곡">
+                    <i class="fa-solid fa-forward"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="lockscreen-footer">
+            <a class="swipe-open" href="#invitation" aria-label="초대장 본문으로 이동">
+                <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+                <span>Swipe up to open invitation</span>
+            </a>
+            <div class="home-indicator" aria-hidden="true"></div>
+        </div>
+
+    </div>
+</div>
+
+<div class="ios-progress-toast" id="progressToast" role="dialog" aria-modal="true" aria-labelledby="progressToastTitle" aria-hidden="true">
+    <div class="ios-progress-dialog">
+        <div class="ios-progress-message">
+            <span class="ios-progress-icon" aria-hidden="true">♥</span>
+            <span class="ios-progress-toast-title" id="progressToastTitle">되돌릴 수 없어요 ㅠㅠ</span>
+            <span class="ios-progress-toast-subtitle">우리의 시간은 결혼식 날을 향해 가는 중이에요.</span>
+        </div>
+        <button type="button" class="ios-progress-ok" id="progressToastOk">확인</button>
+    </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════════ -->
+<!-- 2. INVITATION 섹션 (크림 배경) -->
+<!-- ═════════════════════════════════════════════════════ -->
+
+<section id="invitation" class="section-white">
+    <h2 class="section-title">INVITATION</h2>
+
+    <div class="message fade-in">
+        곁에 있을때<br>
+        가장 나다운 모습이 되게 하는 사람,<br>
+        꿈을 펼칠 수 있도록<br><br>
+        서로에게 날개가 되어줄 한 사람을 만나<br>
+        삶의 여행을 함께 떠나려 합니다.<br>
+        <br>
+        저희 곁에 있어주신 소중한 분들과<br>
+        함께 첫 시작을 내딛고 싶습니다.<br>
+        소중한 걸음으로 함께해 주세요.
+    </div>
+
+    <div class="divider divider-red"></div>
+
+    <div class="family-relations-container fade-in">
+      
+      <div class="relation-row">
+        <span class="parents-names">정호광 · 김영옥</span>
+        <span class="relation-type">의 아들</span>
+        <span class="couple-name">정계철</span>
+      </div>
+
+      <div class="relation-row">
+        <span class="parents-names">권윤근 · 황혜옥</span>
+        <span class="relation-type">의 딸</span>
+        <span class="couple-name">권양아</span>
+      </div>
+
+    </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════ -->
+<!-- 3. 달력 섹션 (흰색 배경) -->
+<!-- ═════════════════════════════════════════════════════ -->
+
+<section class="calendar-section section-cream">
+    <h2 class="section-title">예식 안내</h2>
+
+    <div class="calendar-date">
+        2026.10.18 일요일 낮 2시<br>
+        호텔인터불고원주 1F 사파이어홀
+    </div>
+
+    <div class="calendar-wrap fade-in">
+        <div id="calendarGrid"></div>
+    </div>
+
+    <div class="countdown-grid">
+        <div class="countdown-item">
+            <span class="countdown-label">DAY</span>
+            <span class="countdown-num" id="countDays">00</span>
+        </div>
+        <span class="countdown-separator" aria-hidden="true">:</span>
+        <div class="countdown-item">
+            <span class="countdown-label">HOUR</span>
+            <span class="countdown-num" id="countHours">00</span>
+        </div>
+        <span class="countdown-separator" aria-hidden="true">:</span>
+        <div class="countdown-item">
+            <span class="countdown-label">MIN</span>
+            <span class="countdown-num" id="countMins">00</span>
+        </div>
+        <span class="countdown-separator" aria-hidden="true">:</span>
+        <div class="countdown-item">
+            <span class="countdown-label">SEC</span>
+            <span class="countdown-num" id="countSecs">00</span>
+        </div>
+    </div>
+
+    <div class="dday" id="dday">계철 · 양아의 결혼식까지 000일 남았습니다.</div>
+
+</section>
+
+<!-- ═════════════════════════════════════════════════════ -->
+<!-- 4. GALLERY 섹션 (크림 배경) -->
+<!-- ═════════════════════════════════════════════════════ -->
+
+<section class="section-white">
+    <h2 class="section-title">GALLERY</h2>
+
+    <div class="gallery fade-in" id="galleryGrid">
+        <div class="gallery-item" onclick="openLightbox(this)">
+            <img src="images/wedding-02.jpg" alt="계철과 양아의 웨딩 사진 2" loading="lazy">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-11.jpg" alt="서로 손을 맞잡은 계철과 양아" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-05.jpg" alt="계철과 양아의 웨딩 사진 5" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-06.jpg" alt="계철과 양아의 웨딩 사진 6" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-07.jpg" alt="계철과 양아의 웨딩 사진 7" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-08.jpg" alt="계철과 양아의 웨딩 사진 8" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-09.jpg" alt="계철과 양아의 웨딩 사진 9" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/gallery-after-09.jpg" alt="계철과 양아의 웨딩 사진" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-10.jpg" alt="계철과 양아의 웨딩 사진 10" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-12.jpg" alt="계철과 양아의 웨딩 사진 12" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/gallery-after-12.jpg" alt="계철과 양아의 웨딩 사진" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-13.jpg" alt="계철과 양아의 웨딩 사진 13" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-14.jpg" alt="계철과 양아의 웨딩 사진 14" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-15.jpg" alt="계철과 양아의 웨딩 사진 15" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/gallery-after-15.jpg" alt="계철과 양아의 웨딩 사진" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-16.jpg" alt="계철과 양아의 웨딩 사진 16" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-17.jpg" alt="계철과 양아의 웨딩 사진 17" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-18.jpg" alt="계철과 양아의 웨딩 사진 18" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-19.jpg" alt="베일을 함께 쓴 계철과 양아" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-22.jpg" alt="계철과 양아의 웨딩 사진 22" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-23.jpg" alt="계철과 양아의 웨딩 사진 23" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/wedding-26.jpg" alt="계철과 양아의 웨딩 사진 26" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="images/gallery-extra-kakao.jpg" alt="계철과 양아의 웨딩 사진" loading="lazy"></div>
+    </div>
+    <div class="gallery-dots" id="galleryDots" aria-hidden="true"></div>
+</section>
+
+<!-- 라이트박스 -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="prevImage()">&#10094;</button>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="확대 이미지">
+        <button class="lightbox-nav lightbox-next" onclick="nextImage()">&#10095;</button>
+    </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════════ -->
+<!-- 안내사항 카드 -->
+<!-- ═════════════════════════════════════════════════════ -->
+
+<section class="notice-section section-cream">
+    <h2 class="section-title">안내사항</h2>
+    <p class="notice-intro">카드를 좌우로 넘겨 확인해 주세요.</p>
+
+    <div class="notice-carousel fade-in" id="noticeCarousel" aria-label="예식 안내사항">
+        <article class="notice-card">
+            <div class="notice-polaroid is-white">
+                <img src="images/wedding-20.jpg" alt="푸른 하늘 아래 함께한 계철과 양아">
+                <div class="notice-handwriting">find your way</div>
+            </div>
+            <div class="notice-content">
+                <div class="notice-kicker">LOCATION INFORMATION</div>
+                <p><strong>호텔인터불고 원주 1F 사파이어홀</strong><br>강원도 원주시 동부순환로 200<br>(반곡동 1809-1)</p>
+                <div class="notice-map-buttons">
+                    <a class="notice-map-button" href="https://map.kakao.com/link/search/호텔인터불고원주" target="_blank" rel="noopener">카카오</a>
+                    <a class="notice-map-button" href="https://map.naver.com/p/search/호텔인터불고%20원주" target="_blank" rel="noopener">네이버</a>
+                    <a class="notice-map-button" href="https://www.google.com/maps/search/?api=1&amp;query=호텔인터불고+%EC%9B%90%EC%A3%BC" target="_blank" rel="noopener">구글</a>
+                </div>
+                <p class="notice-parking-note"><strong>주차 안내</strong><br>호텔 내 지상·지하 주차장을 자유롭게 이용하실 수 있으며, 주차 시간 제한 없이 무료입니다.</p>
+            </div>
+        </article>
+
+        <article class="notice-card">
+            <div class="notice-polaroid">
+                <img src="images/wedding-21.jpg" alt="즐거운 분위기의 계철과 양아">
+                <div class="notice-handwriting">feast · toast</div>
+            </div>
+            <div class="notice-content">
+                <div class="notice-kicker">DINING INFORMATION</div>
+                <p><strong>1F 컨벤션홀(연회장)</strong>에서<br>13:30부터 15:30까지 식사가 준비됩니다.<br><br>8세부터는 식권을 지참해 주세요.</p>
+            </div>
+        </article>
+
+        <article class="notice-card">
+            <div class="notice-polaroid is-white">
+                <img src="images/notice-please-note.jpg" alt="손을 맞잡은 계철과 양아의 흑백 사진">
+                <div class="notice-handwriting">please note</div>
+            </div>
+            <div class="notice-content">
+                <div class="notice-kicker">PLEASE NOTE</div>
+                <p>예식장 공간이 협소하여<br><strong>화환 반입이 어렵습니다.</strong><br><br>보내주시는 따뜻한 마음만 감사히 받겠습니다.</p>
+            </div>
+        </article>
+
+        <article class="notice-card">
+            <div class="notice-polaroid">
+                <img src="images/wedding-04.jpg" alt="계철과 양아의 웨딩 사진">
+                <div class="notice-handwriting">with love</div>
+            </div>
+            <div class="notice-content notice-account-content">
+                <div class="notice-kicker">마음 전하실 곳</div>
+                <div class="account-intro">
+                    <p class="account-intro-text">축하의 마음만으로도 충분히 감사드립니다.<br>부득이 참석이 어려워 마음을 전하고자 하시는 분들을 위해 아래에 마음 전하실 곳을 안내드립니다.</p>
+                </div>
+                <div class="account-section">
+                    <div class="account-group" id="groomGroup">
+                        <button class="account-toggle" onclick="toggleAccount('groomGroup')">
+                            <span>신랑측 계좌번호</span>
+                            <svg class="account-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="account-list">
+                            <div class="account-item"><div class="account-info"><div class="account-role">신랑</div><div class="account-name">정계철</div><div class="account-bank">KB국민은행 018302-04-077148</div></div><button class="account-copy-btn" onclick="copyAccount(this, 'KB국민은행 018302-04-077148 정계철')">복사</button></div>
+                            <div class="account-item"><div class="account-info"><div class="account-role">신랑 아버지</div><div class="account-name">정호광</div><div class="account-bank">농협 356-1088-4868-93</div></div><button class="account-copy-btn" onclick="copyAccount(this, '농협 356-1088-4868-93 정호광')">복사</button></div>
+                            <div class="account-item"><div class="account-info"><div class="account-role">신랑 어머니</div><div class="account-name">김영옥</div><div class="account-bank">농협 356-0650-2743-43</div></div><button class="account-copy-btn" onclick="copyAccount(this, '농협 356-0650-2743-43 김영옥')">복사</button></div>
+                        </div>
+                    </div>
+                    <div class="account-group" id="brideGroup">
+                        <button class="account-toggle" onclick="toggleAccount('brideGroup')">
+                            <span>신부측 계좌번호</span>
+                            <svg class="account-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="account-list">
+                            <div class="account-item"><div class="account-info"><div class="account-role">신부</div><div class="account-name">권양아</div><div class="account-bank">기업은행 518-047956-01-012</div></div><button class="account-copy-btn" onclick="copyAccount(this, '기업은행 518-047956-01-012 권양아')">복사</button></div>
+                            <div class="account-item"><div class="account-info"><div class="account-role">신부 아버지</div><div class="account-name">권윤근</div><div class="account-bank">농협 352-0102-9227-83</div></div><button class="account-copy-btn" onclick="copyAccount(this, '농협 352-0102-9227-83 권윤근')">복사</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="notice-dots" id="noticeDots" aria-hidden="true">
+        <span class="notice-dot is-active"></span>
+        <span class="notice-dot"></span>
+        <span class="notice-dot"></span>
+        <span class="notice-dot"></span>
+    </div>
+</section>
+
+<section class="closing-section">
+    <div class="closing-photo fade-in">
+        <img src="images/wedding-03.jpg" alt="서로 마주 보는 정계철과 권양아">
+    </div>
+
+</section>
+
+<footer class="wedding-footer">
+    <div class="wedding-footer-names">GYE CHEOL · YANG A</div>
+    <div class="wedding-footer-label">OUR WEDDING DAY</div>
+    <div class="wedding-footer-heart" aria-hidden="true">♥</div>
+    <div class="wedding-footer-thanks">Thank you for celebrating with us.</div>
+</footer>
+
+<script>
+// 안내사항 카드 현재 위치 표시
+function initNoticeCarousel() {
+    const carousel = document.getElementById('noticeCarousel');
+    const cards = carousel ? [...carousel.querySelectorAll('.notice-card')] : [];
+    const dots = [...document.querySelectorAll('#noticeDots .notice-dot')];
+    if (!carousel || !cards.length || !dots.length) return;
+
+    let ticking = false;
+    function updateDots() {
+        const center = carousel.scrollLeft + carousel.clientWidth / 2;
+        let nearest = 0;
+        let nearestDistance = Infinity;
+        cards.forEach((card, index) => {
+            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            const distance = Math.abs(center - cardCenter);
+            if (distance < nearestDistance) {
+                nearest = index;
+                nearestDistance = distance;
+            }
+        });
+        dots.forEach((dot, index) => dot.classList.toggle('is-active', index === nearest));
+        ticking = false;
+    }
+
+    carousel.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateDots);
+            ticking = true;
+        }
+    }, { passive: true });
+    updateDots();
+}
+
+initNoticeCarousel();
+
+// ════════════════════════════════════════
+// BGM
+// ════════════════════════════════════════
+
+const bgm = document.getElementById('weddingBgm');
+const playBtn = document.getElementById('playBtn');
+const playIcon = document.getElementById('playIcon');
+const hero = document.querySelector('.hero');
+const weddingProgress = document.getElementById('weddingProgress');
+const progressToast = document.getElementById('progressToast');
+const progressToastOk = document.getElementById('progressToastOk');
+const backwardBtn = document.getElementById('backwardBtn');
+let userPausedMusic = false;
+let progressDragStartX = 0;
+let progressDragNotified = false;
+let progressDragActive = false;
+
+function showProgressToast() {
+    progressToast.classList.add('is-visible');
+    progressToast.setAttribute('aria-hidden', 'false');
+    requestAnimationFrame(() => progressToastOk.focus());
+}
+
+function hideProgressToast() {
+    progressToast.classList.remove('is-visible');
+    progressToast.setAttribute('aria-hidden', 'true');
+}
+
+progressToastOk.addEventListener('click', hideProgressToast);
+
+weddingProgress.addEventListener('click', showProgressToast);
+weddingProgress.addEventListener('pointerdown', (event) => {
+    progressDragStartX = event.clientX;
+    progressDragNotified = false;
+    progressDragActive = true;
+    weddingProgress.setPointerCapture?.(event.pointerId);
+});
+weddingProgress.addEventListener('pointermove', (event) => {
+    if (!progressDragActive) return;
+    if (!progressDragNotified && Math.abs(event.clientX - progressDragStartX) > 8) {
+        progressDragNotified = true;
+        showProgressToast();
+    }
+});
+weddingProgress.addEventListener('pointerup', (event) => {
+    progressDragActive = false;
+    weddingProgress.releasePointerCapture?.(event.pointerId);
+});
+weddingProgress.addEventListener('pointercancel', () => {
+    progressDragActive = false;
+    progressDragNotified = false;
+});
+weddingProgress.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        showProgressToast();
+    }
+});
+backwardBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showProgressToast();
+});
+
+function updatePlayerState() {
+    const isPlaying = !bgm.paused;
+    playIcon.className = isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+    playBtn.setAttribute('aria-label', isPlaying ? '음악 일시정지' : '음악 재생');
+    hero.classList.toggle('is-playing', isPlaying);
+}
+
+// 1. 화면 진입 시 자동 재생 처리 (브라우저 제한 우회)
+function startAutoplay() {
+    if (userPausedMusic) return;
+    bgm.play().then(() => {
+        updatePlayerState();
+        // 재생이 성공하면 더 이상 첫 터치 이벤트를 감지할 필요가 없으므로 제거
+        window.removeEventListener('click', startAutoplay);
+        window.removeEventListener('touchstart', startAutoplay);
+    }).catch((error) => {
+        // 브라우저가 자동 재생을 막은 경우 (터치 전)
+        console.log("Autoplay blocked. Waiting for user interaction.");
+    });
+}
+
+// 사용자가 페이지 들어와서 처음 클릭하거나 터치할 때 음악 시작
+window.addEventListener('click', startAutoplay);
+window.addEventListener('touchstart', startAutoplay); // 모바일 터치 대응
+startAutoplay();
+
+
+// 2. 버튼 클릭 시 재생/정지 토글 이벤트
+playBtn.addEventListener('click', (e) => {
+    // 부모 이벤트(startAutoplay)가 또 실행되는 걸 방지
+    e.stopPropagation(); 
+
+    if (bgm.paused) {
+        // 멈춰있었다면 재생
+        userPausedMusic = false;
+        bgm.play().then(updatePlayerState);
+    } else {
+        // 재생 중이었다면 정지
+        userPausedMusic = true;
+        bgm.pause();
+        window.removeEventListener('click', startAutoplay);
+        window.removeEventListener('touchstart', startAutoplay);
+        updatePlayerState();
+    }
+});
+
+bgm.addEventListener('play', updatePlayerState);
+bgm.addEventListener('pause', updatePlayerState);
+
+// ════════════════════════════════════════
+// D-Day & 프로그레스 바
+// ════════════════════════════════════════
+
+const weddingDate = new Date("2026-10-18T14:00:00");
+const startDate = new Date("2025-01-01");
+
+function updateCountdown() {
+  const now = new Date();
+  
+  // 프로그레스 바
+  let percent = ((now - startDate) / (weddingDate - startDate)) * 100;
+  percent = Math.max(0, Math.min(percent, 100));
+  document.getElementById("fill").style.width = percent + "%";
+
+  // D-Day 계산
+  const distance = weddingDate - now;
+  
+  if (distance > 0) {
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("dday").textContent = `계철 · 양아의 결혼식까지 ${days}일 남았습니다.`;
+    document.getElementById("countDays").textContent = String(days).padStart(2, '0');
+    document.getElementById("countHours").textContent = String(hours).padStart(2, '0');
+    document.getElementById("countMins").textContent = String(minutes).padStart(2, '0');
+    document.getElementById("countSecs").textContent = String(seconds).padStart(2, '0');
+  } else {
+    document.getElementById("dday").textContent = "오늘은 계철, 양아의 결혼식 날입니다.";
+    document.getElementById("countDays").textContent = "00";
+    document.getElementById("countHours").textContent = "00";
+    document.getElementById("countMins").textContent = "00";
+    document.getElementById("countSecs").textContent = "00";
+  }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ════════════════════════════════════════
+// 달력
+// ════════════════════════════════════════
+function initCalendar() {
+    const dt = weddingDate; // getWeddingDate 제거
+
+    const year = dt.getFullYear();
+    const month = dt.getMonth();
+    const weddingDay = dt.getDate();
+
+    const grid = document.getElementById('calendarGrid');
+  
+    const monthNames = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+  
+    const weekdays = ['일','월','화','수','목','금','토'];
+    const wdRow = document.createElement('div');
+    wdRow.className = 'calendar__weekdays';
+    weekdays.forEach(wd => {
+      const el = document.createElement('span');
+      el.className = 'calendar__weekday';
+      el.textContent = wd;
+      wdRow.appendChild(el);
+    });
+    grid.appendChild(wdRow);
+  
+    const daysContainer = document.createElement('div');
+    daysContainer.className = 'calendar__days';
+  
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+  
+    for (let i = 0; i < firstDay; i++) {
+      const empty = document.createElement('span');
+      empty.className = 'calendar__day is-empty';
+      empty.textContent = ' ';
+      daysContainer.appendChild(empty);
+    }
+  
+    for (let d = 1; d <= lastDate; d++) {
+      const dayEl = document.createElement('span');
+      const dow = new Date(year, month, d).getDay();
+      let cls = 'calendar__day';
+      if (d === weddingDay) cls += ' is-wedding';
+      else if (dow === 0) cls += ' is-sunday';
+      else if (dow === 6) cls += ' is-saturday';
+      dayEl.className = cls;
+      dayEl.textContent = d;
+      daysContainer.appendChild(dayEl);
+    }
+  
+    grid.appendChild(daysContainer);
+  
+    // // Google 캘린더 링크
+    // const start = dt.toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
+    // const endDt = new Date(dt.getTime() + 2 * 60 * 60 * 1000);
+    // const end = endDt.toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
+    // const title = encodeURIComponent(WEDDING.groomName + ' ♥ ' + WEDDING.brideName + ' 결혼식');
+    // const loc = encodeURIComponent(WEDDING.venue + ' ' + WEDDING.address);
+    // document.getElementById('googleCalBtn').href =
+    //   `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&location=${loc}&details=${encodeURIComponent('결혼식에 초대합니다.')}`;
+  
+    // // ICS 다운로드
+    // document.getElementById('icsDownloadBtn').addEventListener('click', () => {
+    //   const ics = [
+    //     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding//Invitation//KO',
+    //     'BEGIN:VEVENT',
+    //     'DTSTART:' + start, 'DTEND:' + end,
+    //     'SUMMARY:' + WEDDING.groomName + ' \u2665 ' + WEDDING.brideName + ' \uacb0\ud63c\uc2dd',
+    //     'LOCATION:' + WEDDING.venue + ' ' + WEDDING.address,
+    //     'DESCRIPTION:\uacb0\ud63c\uc2dd\uc5d0 \ucd08\ub300\ud569\ub2c8\ub2e4.',
+    //     'END:VEVENT','END:VCALENDAR'
+    //   ].join('\r\n');
+    //   const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    //   const url = URL.createObjectURL(blob);
+    //   const a = document.createElement('a');
+    //   a.href = url; a.download = 'wedding.ics'; a.click();
+    //   URL.revokeObjectURL(url);
+    // });
+  }
+
+  initCalendar();
+
+// ════════════════════════════════════════
+// 갤러리 라이트박스
+// ════════════════════════════════════════
+
+function initGalleryCarousel() {
+  const gallery = document.getElementById('galleryGrid');
+  const items = gallery ? [...gallery.querySelectorAll('.gallery-item')] : [];
+  const dotsContainer = document.getElementById('galleryDots');
+  if (!gallery || !items.length || !dotsContainer) return;
+  dotsContainer.innerHTML = items.map((_, index) =>
+    `<span class="gallery-dot${index === 0 ? ' is-active' : ''}"></span>`
+  ).join('');
+  const dots = [...dotsContainer.querySelectorAll('.gallery-dot')];
+
+  let ticking = false;
+  function updateGalleryDots() {
+    const center = gallery.scrollLeft + gallery.clientWidth / 2;
+    let nearest = 0;
+    let nearestDistance = Infinity;
+    items.forEach((item, index) => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const distance = Math.abs(center - itemCenter);
+      if (distance < nearestDistance) {
+        nearest = index;
+        nearestDistance = distance;
+      }
+    });
+    dots.forEach((dot, index) => dot.classList.toggle('is-active', index === nearest));
+    items.forEach((item, index) => item.classList.toggle('is-active', index === nearest));
+    gallery.classList.add('is-ready');
+    ticking = false;
+  }
+
+  gallery.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateGalleryDots);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateGalleryDots();
+}
+
+initGalleryCarousel();
+
+let currentImageIndex = 0;
+const galleryImages = [...document.querySelectorAll('#galleryGrid .gallery-item img')]
+  .map((image) => image.src);
+
+function openLightbox(element) {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  currentImageIndex = Array.from(galleryItems).indexOf(element);
+  
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  
+  if (element.querySelector('img')) {
+    lightboxImage.src = element.querySelector('img').src;
+  } else {
+    lightboxImage.src = galleryImages[currentImageIndex];
+  }
+  
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+  updateLightboxImage(galleryItems[currentImageIndex]);
+}
+
+function prevImage() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+  updateLightboxImage(galleryItems[currentImageIndex]);
+}
+
+function updateLightboxImage(element) {
+  const lightboxImage = document.getElementById('lightboxImage');
+  if (element.querySelector('img')) {
+    lightboxImage.src = element.querySelector('img').src;
+  } else {
+    lightboxImage.src = galleryImages[currentImageIndex];
+  }
+}
+
+document.addEventListener('keydown', function(event) {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox.classList.contains('active')) {
+    if (event.key === 'ArrowRight') nextImage();
+    if (event.key === 'ArrowLeft') prevImage();
+    if (event.key === 'Escape') closeLightbox();
+  }
+});
+
+let lightboxTouchStartX = 0;
+const lightboxElement = document.getElementById('lightbox');
+lightboxElement.addEventListener('touchstart', (event) => {
+  lightboxTouchStartX = event.changedTouches[0].clientX;
+}, { passive: true });
+lightboxElement.addEventListener('touchend', (event) => {
+  const deltaX = event.changedTouches[0].clientX - lightboxTouchStartX;
+  if (Math.abs(deltaX) > 45) {
+    deltaX < 0 ? nextImage() : prevImage();
+  }
+}, { passive: true });
+
+document.addEventListener('click', function(event) {
+  const lightbox = document.getElementById('lightbox');
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// ════════════════════════════════════════
+// 주소 복사
+// ════════════════════════════════════════
+
+function copyAddress() {
+  const address = '강원도 원주시 동부순환로 200 (반곡동 1809-1)';
+  copyToClipboard(address, event.target);
+}
+
+// ════════════════════════════════════════
+// 계좌 복사
+// ════════════════════════════════════════
+
+function copyAccount(button, accountInfo) {
+  copyToClipboard(accountInfo, button);
+}
+
+function copyToClipboard(text, button) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text)
+      .then(() => showCopyFeedback(button))
+      .catch(() => fallbackCopy(text, button));
+  } else {
+    fallbackCopy(text, button);
+  }
+}
+
+function fallbackCopy(text, button) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    showCopyFeedback(button);
+  } catch (err) {
+    console.error('복사 실패:', err);
+  }
+  document.body.removeChild(textarea);
+}
+
+function showCopyFeedback(button) {
+  const originalText = button.textContent;
+  const originalClass = button.className;
+  
+  button.textContent = '✓ 복사됨';
+  button.classList.add('copied');
+
+  setTimeout(function() {
+    button.textContent = originalText;
+    button.className = originalClass;
+  }, 2000);
+}
+
+// ════════════════════════════════════════
+// 계좌 토글
+// ════════════════════════════════════════
+
+function toggleAccount(groupId) {
+  const group = document.getElementById(groupId);
+  group.classList.toggle('is-open');
+}
+
+// ════════════════════════════════════════
+// 스크롤 애니메이션
+// ════════════════════════════════════════
+
+function setupScrollAnimations() {
+  const options = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  const fadeInElements = document.querySelectorAll('.fade-in');
+  fadeInElements.forEach(function(element) {
+    observer.observe(element);
+  });
+}
+
+setupScrollAnimations();
+
+// ════════════════════════════════════════
+// 버튼 최소 크기 (접근성)
+// ════════════════════════════════════════
+
+const buttons = document.querySelectorAll('button, a.map-btn');
+buttons.forEach(function(btn) {
+  btn.style.minHeight = '44px';
+  btn.style.minWidth = '44px';
+});
+
+console.log('✨ 결혼식 청첩장 준비됨! 🎊');
+
+</script>
+
+</body>
+</html>

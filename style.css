@@ -1,0 +1,993 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red: #7B1C1C;
+  --red-dark: #5C1212;
+  --red-light: #A32828;
+  --cream: #F0EBE1;
+  --cream-dark: #E4DDD0;
+  --cream-mid: #D8CEBC;
+  --text-dark: #2A1A1A;
+  --text-mid: #5A3A3A;
+  --text-light: #8A6A6A;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background: var(--cream);
+  color: var(--text-dark);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  /* 모바일 확대 비활성화 */
+  touch-action: manipulation;
+}
+
+/* ── 섹션 공통 ── */
+section { 
+  position: relative;
+  width: 100%;
+  padding-left: clamp(16px, 5%, 32px);
+  padding-right: clamp(16px, 5%, 32px);
+}
+
+/* ── 1. HERO ── */
+.hero {
+    background: var(--cream); 
+    padding: clamp(40px, 10vw, 60px) clamp(16px, 5%, 32px) clamp(30px, 8vw, 40px); 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: min(320px, 80vw);
+  height: min(320px, 80vw);
+  background: var(--red);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0.08;
+}
+
+.hero-label {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(9px, 2vw, 10px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: clamp(20px, 5vw, 28px);
+}
+
+.heart-container {
+  position: relative;
+  width: min(200px, 80vw);
+  height: auto;
+  margin: 0 auto clamp(16px, 4vw, 24px);
+}
+
+.wedding-title {
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700; 
+    color: #C9382A; 
+    letter-spacing: -0.02em; 
+    line-height: 1.1;
+    text-transform: capitalize;
+}
+
+.heart-svg {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+}
+
+.names-block {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(8px, 2vw, 12px);
+}
+
+.name-main {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 8vw, 42px);
+  font-weight: 300;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.name-and {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 4vw, 18px);
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  margin: 4px 0;
+}
+
+.date-block {
+  position: absolute;
+  right: clamp(-10px, -2vw, -16px);
+  top: 8px;
+  background: var(--red);
+  padding: 12px clamp(12px, 3vw, 16px);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.date-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 6vw, 28px);
+  font-weight: 400;
+  color: white;
+  line-height: 1;
+  display: block;
+}
+
+.photo-frame {
+  width: min(240px, 70vw);
+  height: auto;
+  aspect-ratio: 4/5;
+  margin: 0 auto clamp(24px, 6vw, 32px);
+  position: relative;
+  overflow: hidden;
+  border-radius: min(120px, 15vw) min(120px, 15vw) 0 0;
+  background: var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, var(--cream-mid) 0%, var(--cream-dark) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.photo-placeholder svg { opacity: 0.3; }
+.photo-placeholder span {
+  font-size: clamp(10px, 2vw, 11px);
+  letter-spacing: 0.15em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.hero-names-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 7vw, 36px);
+  font-weight: 300;
+  color: var(--red-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.hero-and {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 4vw, 20px);
+  font-style: italic;
+  color: var(--text-light);
+  margin: 0 clamp(8px, 2vw, 12px);
+}
+
+.hero-date-big {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 300;
+  color: var(--text-mid);
+  letter-spacing: 0.15em;
+  margin-bottom: clamp(24px, 6vw, 32px);
+}
+
+.red-bar {
+  background: var(--red);
+  color: white;
+  padding: 14px clamp(20px, 5%, 32px);
+  font-size: clamp(10px, 2vw, 11px);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.red-bar + .section-title-bar {
+  background: var(--cream);
+  padding: 12px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 6vw, 28px);
+  color: var(--red-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.invitation-hero {
+  background: var(--cream);
+  padding: clamp(30px, 8vw, 40px) clamp(20px, 5%, 32px);
+  text-align: center;
+}
+
+/* ── 2. 편지 섹션 ── */
+.letter-section {
+  background: var(--cream);
+  text-align: center;
+  padding: clamp(30px, 8vw, 48px) clamp(16px, 5%, 32px);
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 8vw, 40px);
+  font-weight: 300;
+  color: var(--red-dark);
+  line-height: 1.2;
+  margin-bottom: clamp(20px, 5vw, 32px);
+  letter-spacing: 0.08em;
+}
+
+.letter-text-main {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(13px, 3.5vw, 15px);
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: clamp(16px, 4vw, 20px);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.letter-date {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 6vw, 26px);
+  color: var(--red);
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+.family-relations-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 3vw, 16px);
+  margin: clamp(24px, 6vw, 30px) auto;
+  width: 100%;
+  max-width: 400px;
+  align-items: center;
+}
+
+.relation-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: clamp(12px, 3vw, 14px);
+  color: #444444;
+  width: 100%;
+  justify-content: center;
+  gap: clamp(4px, 1vw, 8px);
+}
+
+.parents-names {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  flex: 0 1 auto;
+}
+
+.relation-type {
+  font-size: clamp(11px, 2.5vw, 12px);
+  color: #888888;
+}
+
+.couple-title {
+  font-size: clamp(11px, 2.5vw, 12px);
+  color: #888888;
+}
+
+.couple-name {
+  font-weight: 500;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+}
+
+/* ── 3. 장소 ── */
+.venue-section {
+  background: var(--red-dark);
+  width: 100%;
+  overflow: hidden;
+  padding: clamp(20px, 5vw, 32px) clamp(16px, 5%, 32px);
+}
+
+.venue-label {
+  padding: clamp(12px, 3vw, 20px) clamp(16px, 3%, 24px) clamp(8px, 2vw, 12px);
+  font-size: clamp(16px, 4vw, 20px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.venue-photo-frame {
+  width: 100%;
+  height: clamp(160px, 40vw, 220px);
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(8px, 2vw, 12px);
+}
+
+.venue-arch {
+  width: clamp(80px, 20vw, 120px);
+  height: clamp(100px, 25vw, 160px);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 12px;
+}
+
+.venue-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #3D0E0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-info {
+  padding: clamp(16px, 4vw, 20px) clamp(16px, 3%, 24px) clamp(24px, 6vw, 32px);
+  color: white;
+}
+
+.venue-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 5vw, 22px);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: clamp(6px, 1.5vw, 8px);
+}
+
+.venue-address {
+  font-size: clamp(12px, 3vw, 13px);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: clamp(12px, 3vw, 16px);
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: clamp(12px, 3vw, 16px);
+  padding: clamp(8px, 2vw, 10px) clamp(16px, 4vw, 24px);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 40px;
+  font-size: clamp(11px, 2.5vw, 12px);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-right: clamp(6px, 1.5vw, 10px);
+  margin-bottom: clamp(6px, 1.5vw, 10px);
+}
+
+.map-btn:hover { background: rgba(255,255,255,0.1); }
+
+.map-embed {
+  width: 100%;
+  height: clamp(200px, 50vw, 300px);
+  border-radius: clamp(8px, 2vw, 12px);
+  overflow: hidden;
+  margin: clamp(16px, 4vw, 20px) 0;
+  background: var(--cream-mid);
+  position: relative;
+}
+
+.map-embed iframe {
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* ── 4. 캘린더 섹션 ── */
+.calendar-section {
+  background: var(--cream);
+  padding: clamp(30px, 8vw, 48px) clamp(16px, 5%, 32px);
+  text-align: center;
+}
+
+.dday-display {
+  margin-bottom: clamp(20px, 5vw, 32px);
+}
+
+.dday-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 16px);
+  margin-bottom: clamp(12px, 3vw, 16px);
+  flex-wrap: wrap;
+}
+
+.dday-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 10vw, 48px);
+  font-weight: 400;
+  color: var(--red);
+  line-height: 1;
+}
+
+.divider-vertical {
+  width: 1px;
+  height: clamp(16px, 4vw, 24px);
+  background: var(--cream-mid);
+}
+
+.calendar-wrap {
+  margin: clamp(20px, 5vw, 32px) 0;
+}
+
+#calendarGrid {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.dday-units {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: clamp(12px, 3vw, 20px);
+  margin: clamp(20px, 5vw, 32px) 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dday-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(4px, 1vw, 8px);
+}
+
+.dday-unit-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 400;
+  color: var(--red);
+}
+
+.dday-unit-label {
+  font-size: clamp(11px, 2.5vw, 13px);
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
+.dday-label {
+  font-size: clamp(12px, 3vw, 14px);
+  color: var(--text-light);
+  margin-top: clamp(8px, 2vw, 12px);
+}
+
+.cal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 2vw, 12px);
+  max-width: 400px;
+  margin: clamp(20px, 5vw, 32px) auto 0;
+}
+
+.cal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 24px);
+  border: 1px solid var(--cream-mid);
+  border-radius: 8px;
+  background: white;
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(12px, 3vw, 14px);
+  font-weight: 400;
+  color: var(--text-dark);
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cal-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ── 5. 상세정보 ── */
+.details-section {
+  background: var(--red);
+  padding: clamp(30px, 8vw, 48px) clamp(16px, 5%, 32px);
+  color: white;
+}
+
+.details-section .section-heading {
+  color: white;
+}
+
+.detail-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: clamp(8px, 2vw, 12px);
+  padding: clamp(16px, 4vw, 24px);
+  margin-bottom: clamp(12px, 3vw, 16px);
+  font-size: clamp(13px, 3.5vw, 14px);
+  line-height: 1.8;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  position: relative;
+}
+
+/* ── 6. 계좌번호 ── */
+.account-section {
+  background: var(--cream);
+  padding: clamp(30px, 8vw, 48px) clamp(16px, 5%, 32px);
+  text-align: center;
+}
+
+.account-intro {
+  font-size: clamp(13px, 3.5vw, 16px);
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: clamp(20px, 5vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+.account-group {
+  border: 1px solid var(--cream-mid);
+  border-radius: clamp(8px, 2vw, 12px);
+  overflow: hidden;
+  margin-bottom: clamp(10px, 2.5vw, 12px);
+  background: white;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.account-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(12px, 3vw, 16px) clamp(16px, 3%, 20px);
+  background: none;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(12px, 3vw, 13px);
+  font-weight: 400;
+  color: var(--text-dark);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  text-align: left;
+}
+
+.account-toggle-icon {
+  width: clamp(14px, 3vw, 16px);
+  height: clamp(14px, 3vw, 16px);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--text-light);
+}
+
+.account-group.is-open .account-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.account-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  border-top: 0px solid var(--cream-mid);
+}
+
+.account-group.is-open .account-list {
+  max-height: 600px;
+  border-top-width: 1px;
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(10px, 2.5vw, 14px) clamp(16px, 3%, 20px);
+  border-bottom: 1px solid var(--cream-mid);
+  flex-wrap: wrap;
+  gap: clamp(8px, 2vw, 12px);
+}
+
+.account-item:last-child { border-bottom: none; }
+
+.account-role {
+  font-size: clamp(9px, 2.5vw, 10px);
+  letter-spacing: 0.15em;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  flex: 1 1 100%;
+}
+
+.account-name {
+  font-size: clamp(13px, 3.5vw, 14px);
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+  flex: 1 1 auto;
+  min-width: 100px;
+}
+
+.account-bank {
+  font-size: clamp(11px, 2.5vw, 12px);
+  color: var(--text-light);
+  font-weight: 300;
+  flex: 1 1 100%;
+}
+
+.account-copy-btn {
+  flex-shrink: 0;
+  padding: clamp(6px, 1.5vw, 7px) clamp(10px, 2.5vw, 14px);
+  border: 1px solid var(--cream-mid);
+  border-radius: 40px;
+  background: white;
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(10px, 2.5vw, 11px);
+  color: var(--text-mid);
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  white-space: nowrap;
+  margin-top: clamp(6px, 1.5vw, 8px);
+}
+
+.account-copy-btn:hover { border-color: var(--red); color: var(--red); }
+.account-copy-btn.copied { background: var(--red); border-color: var(--red); color: white; }
+
+/* ── 7. 갤러리 ── */
+.gallery-section {
+  background: var(--cream);
+  padding: clamp(30px, 8vw, 48px) clamp(16px, 5%, 32px);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(100px, 25vw, 150px), 1fr));
+  gap: clamp(8px, 2vw, 12px);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  border-radius: clamp(6px, 1.5vw, 8px);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+  background: var(--cream-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item:active,
+.gallery-item:hover {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  opacity: 0.5;
+}
+
+/* 라이트박스 */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  max-width: 600px;
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 4px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+/* ── 8. 마지막 섹션 ── */
+.closing-section {
+  background: var(--cream);
+  padding: clamp(30px, 8vw, 40px) clamp(16px, 5%, 32px) clamp(40px, 10vw, 60px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.closing-photo {
+  width: min(200px, 70vw);
+  height: auto;
+  aspect-ratio: 4/5;
+  margin: 0 auto clamp(24px, 6vw, 32px);
+  border-radius: min(100px, 12vw) min(100px, 12vw) 0 0;
+  background: var(--cream-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closing-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 6vw, 28px);
+  font-weight: 300;
+  color: var(--red-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.heart-row {
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 12px);
+  margin-top: clamp(16px, 4vw, 20px);
+}
+
+/* ── 애니메이션 ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 공통 장식 ── */
+.divider {
+  width: clamp(30px, 10vw, 40px);
+  height: 1px;
+  background: var(--cream-mid);
+  margin: 0 auto clamp(24px, 6vw, 32px);
+}
+
+.divider-red {
+  background: var(--red);
+  opacity: 0.3;
+}
+
+/* 폴라로이드 */
+.polaroid-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: clamp(-16px, -5vw, -20px) auto clamp(20px, 5vw, 30px);
+    z-index: 2;
+    width: 100%;
+  }
+  
+.polaroid-frame {
+    padding: clamp(8px, 2vw, 12px);
+    width: min(90vw, 400px);
+    max-width: 100%;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06), 0 4px 10px rgba(0, 0, 0, 0.02);
+    position: relative;
+    background: white;
+    border-radius: clamp(4px, 1vw, 8px);
+  }
+  
+.polaroid-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #eee;
+    border-radius: clamp(2px, 0.5vw, 4px);
+  }
+  
+.polaroid-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.tape-sticker {
+    position: absolute;
+    top: clamp(-4px, -1vw, 0px);
+    left: 50%;
+    transform: translateX(-60%) rotate(2deg);
+    width: clamp(60px, 15vw, 100px);
+    z-index: 10;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    mix-blend-mode: multiply;
+  }
+
+.heart-badge {
+    position: absolute;
+    width: clamp(30px, 8vw, 50px);
+    z-index: 12;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+  }
+  
+.heart-1 {
+    bottom: clamp(12px, 3vw, 20px);
+    right: clamp(-8px, -2vw, -10px);
+    transform: rotate(15deg);
+  }
+  
+.heart-2 {
+    top: clamp(40px, 10vw, 60px);
+    left: clamp(2px, 0.5vw, 5px);
+    transform: rotate(-20deg);
+    width: clamp(18px, 5vw, 28px);
+  }
+
+.heart-row-item {
+    display: block;
+    margin: 0 auto clamp(16px, 4vw, 24px);
+    width: clamp(28px, 8vw, 40px);
+    height: auto;
+  }
+
+/* ── 반응형 조정 ── */
+
+/* 매우 작은 화면 (300px 이하) */
+@media (max-width: 320px) {
+  section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .family-relations-container {
+    max-width: 280px;
+  }
+  
+  .dday-units {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .cal-buttons {
+    flex-direction: column;
+  }
+}
+
+/* 타블렛 (768px 이상) */
+@media (min-width: 768px) {
+  body {
+    max-width: 800px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  
+  .dday-units {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .cal-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* 프린트 스타일 */
+@media print {
+  body {
+    background: white;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+}

@@ -920,7 +920,7 @@ section{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(42, 26, 26, 0.58);
     border: none;
     color: white;
     font-size: 24px;
@@ -934,6 +934,10 @@ section{
     min-height: 44px;
     min-width: 44px;
     transition: background 0.2s;
+    z-index: 3;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .lightbox-nav:active {
@@ -1038,7 +1042,7 @@ section{
 
 /* 교통 안내 */
 .transport-guide {
-    margin-top: clamp(34px, 8vw, 44px);
+    margin-top: 0;
 }
 
 .transport-item {
@@ -1598,6 +1602,7 @@ body .venue-address-row .venue-address {
 }
 
 .transport-item.is-shuttle {
+    margin-top: clamp(28px, 7vw, 36px);
     border-top: 1px solid var(--cream-mid);
 }
 
@@ -1749,7 +1754,7 @@ body .account-flower-note::before {
             <article class="guest-panel">
                 <div class="guest-block">
                     <div class="guest-block-label">일시 · 장소</div>
-                    <p class="guest-block-text"><strong>2026년 10월 3일 토요일 오전 11시 ~ 오후 2시</strong><br>가회체육공원 뷔페<br>경남 합천군 가회면 신등가회로 874</p>
+                    <p class="guest-block-text"><strong>2026년 10월 3일 토요일<br>오전 11시부터</strong><br>가회체육공원 뷔페<br>경남 합천군 가회면 신등가회로 874</p>
                 </div>
             </article>
         </div>

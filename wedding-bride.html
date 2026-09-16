@@ -2076,6 +2076,11 @@ window.addEventListener('click', startAutoplay);
 window.addEventListener('touchstart', startAutoplay); // 모바일 터치 대응
 startAutoplay();
 
+// 모바일에서 재생 버튼의 첫 터치가 전역 자동재생과 겹치지 않도록 처리
+playBtn.addEventListener('touchstart', (e) => {
+    e.stopPropagation();
+}, { passive: true });
+
 
 // 2. 버튼 클릭 시 재생/정지 토글 이벤트
 playBtn.addEventListener('click', (e) => {

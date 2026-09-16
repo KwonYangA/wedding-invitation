@@ -1690,7 +1690,7 @@ body .account-flower-note::before {
                 <button type="button" class="play-btn" id="playBtn" aria-label="음악 재생">
                     <i class="fa-solid fa-play" id="playIcon"></i>
                 </button>
-                <audio id="weddingBgm" src="../audio/bgm_1.mp3" loop></audio>
+                <audio id="weddingBgm" src="../audio/bgm_1.mp3" autoplay loop preload="auto"></audio>
                 <button type="button" aria-label="다음 곡">
                     <i class="fa-solid fa-forward"></i>
                 </button>
@@ -2048,6 +2048,7 @@ const bgm = document.getElementById('weddingBgm');
 const playBtn = document.getElementById('playBtn');
 const playIcon = document.getElementById('playIcon');
 const hero = document.querySelector('.hero');
+let userPausedMusic = false;
 
 function updatePlayerState() {
     const isPlaying = !bgm.paused;
@@ -2058,6 +2059,7 @@ function updatePlayerState() {
 
 // 1. 화면 진입 시 자동 재생 처리 (브라우저 제한 우회)
 function startAutoplay() {
+    if (userPausedMusic) return;
     bgm.play().then(() => {
         updatePlayerState();
         // 재생이 성공하면 더 이상 첫 터치 이벤트를 감지할 필요가 없으므로 제거
@@ -2072,6 +2074,7 @@ function startAutoplay() {
 // 사용자가 페이지 들어와서 처음 클릭하거나 터치할 때 음악 시작
 window.addEventListener('click', startAutoplay);
 window.addEventListener('touchstart', startAutoplay); // 모바일 터치 대응
+startAutoplay();
 
 
 // 2. 버튼 클릭 시 재생/정지 토글 이벤트
@@ -2081,10 +2084,14 @@ playBtn.addEventListener('click', (e) => {
 
     if (bgm.paused) {
         // 멈춰있었다면 재생
+        userPausedMusic = false;
         bgm.play().then(updatePlayerState);
     } else {
         // 재생 중이었다면 정지
+        userPausedMusic = true;
         bgm.pause();
+        window.removeEventListener('click', startAutoplay);
+        window.removeEventListener('touchstart', startAutoplay);
         updatePlayerState();
     }
 });
